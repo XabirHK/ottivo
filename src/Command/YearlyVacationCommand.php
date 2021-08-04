@@ -64,9 +64,9 @@ class YearlyVacationCommand extends Command
 
         if ($year) {
 
-            foreach ($employees as $key => $employee) {
+            foreach ($employees as $employee) {
                 $vacationDays = $this->vacationCalculatorService->yearlyVacationDaysByEmployee($employee, $year);
-                $io->note(sprintf('Name: %s Vacation Days: %d' , $employee->getName(), $vacationDays));
+                $io->note(sprintf('Name: %s - Vacation Days: %d - for year %s' , $employee->getName(), $vacationDays, $year));
             }
         }
 

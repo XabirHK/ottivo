@@ -1,0 +1,18 @@
+version: '2'
+
+volumes:
+  datafiles:
+
+services:
+  website:
+    container_name: ottivo-vacation-calculator
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - 8080:80
+      - 8083:443
+    restart: unless-stopped
