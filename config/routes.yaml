@@ -1,3 +1,8 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+employee_list:
+  path: /employee
+  controller: App\Controller\EmployeeController:index
+  methods: [GET]
