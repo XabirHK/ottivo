@@ -13,6 +13,13 @@ RUN chmod +x bin/console
 
 # composer :
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-CMD bash -c "composer install"
+
+COPY composer.json ./
+COPY composer.lock ./
+RUN composer install --no-scripts --no-autoloader
+COPY . ./
+RUN composer dump-autoload --optimize && \
+	composer run-script post-install-cmd
+
 EXPOSE 80/tcp
 EXPOSE 443/tcp
