@@ -1,4 +1,4 @@
-# Ottonova coding challenge
+# Ottonova challenge
 
 ## Without Docker
 ### Requirements
