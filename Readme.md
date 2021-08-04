@@ -50,6 +50,16 @@ run
     
     docker exec ottivo-vacation-calculator bash -lc 'php bin/console YearlyVacation 2020'
 
+
+### if it has error
+try running 
+
+    docker exec -it ottivo-vacation-calculator bash
+    composer install
+    php bin/console YearlyVacation 2020
+  
+  
+
 #### from inside the docker container
 run
 
